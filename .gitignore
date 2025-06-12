@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Environment
+.env
+.venv/
+env/
+venv/
+*.env
+
+# Model artifacts (original and fine-tuned)
+ner_original_model/
+ner_finetuned_model/
+*.bin
+*.pt
+
+# Results and logs
+results/
+*.log
+
+# Gradio and MLflow artifacts
+.gradio/
+mlruns/
+
+# Jupyter Notebook checkpoint files
+*.checkpoint
+
+# Ignore large model/test artifacts
+*.pth
+*.ckpt
+
+# Ignore OS/Editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ! DO NOT ignore these important project files
+!*.csv
+!train_config.json
