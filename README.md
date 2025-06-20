@@ -63,13 +63,16 @@ Train the model with:
 
 ```bash
 python training.py
- 
+```
+
 Run it with:
 
 ```bash
 python gradio_app.py
+```
 
 Evaluate on real-world data:
 
 ```bash
 python evaluate.py
+```
