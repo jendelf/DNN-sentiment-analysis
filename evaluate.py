@@ -6,7 +6,7 @@ model_path = "./ner_finetuned_model"
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForSequenceClassification.from_pretrained(model_path)
 
-test_df = pd.read_csv("real_data.csv") 
+test_df = pd.read_csv("data/real_data.csv") 
 
 test_df.columns = test_df.columns.str.strip()
 

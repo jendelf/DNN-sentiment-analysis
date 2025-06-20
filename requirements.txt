@@ -1,0 +1,8 @@
+numpy
+datasets>=2.0.0
+evaluate
+transformers>=4.30.0
+scikit-learn
+mlflow
+gradio
+torch>=1.13.0

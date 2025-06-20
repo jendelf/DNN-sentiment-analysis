@@ -15,7 +15,7 @@ import gradio as gr
 import random
 import torch
 from datasets import Dataset
-
+from pathlib import Path
 
 # ===================== 0. creating random seed =====================
 def set_seed(seed: int):
@@ -29,14 +29,22 @@ def set_seed(seed: int):
 set_seed(42)  
 
 # ===================== 1. LOAD THE DATASET =====================
+data_dir = Path("data")
+data_dir.mkdir(parents=True, exist_ok=True)
+
 print("Step 1: Loading the tweet_eval dataset...")
 dataset = load_dataset("tweet_eval", "sentiment")
 print(f"Dataset loaded with {len(dataset['train'])} training examples")
-with open('tweet_eval_dataset.csv', 'w', newline='') as f:
+
+# Save dataset to CSV in the data directory
+csv_path = data_dir / "tweet_eval_dataset.csv"
+with csv_path.open("w", newline='', encoding="utf-8") as f:
     writer = csv.writer(f)
-    writer.writerow(["text", "label"]) 
+    writer.writerow(["text", "label"])
     for example in dataset["train"]:
         writer.writerow([example["text"], example["label"]])
+
+print(f"Dataset saved to {csv_path.resolve()}")
 
 # ===================== 2. DEFINE LABEL MAPPING =====================
 print("Step 2: Setting up the label mapping...")
