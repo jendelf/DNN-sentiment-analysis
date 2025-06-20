@@ -9,7 +9,7 @@ The task is to determine whether an expression is a **positive**, **neutral**, o
 
 ## 📂 Dataset
 
-This project uses the [`tweet_eval`](https://huggingface.co/datasets/tweet_eval) dataset from Hugging Face Datasets.
+This project uses the [`benayas/tweet_eval`](https://huggingface.co/datasets/benayas/tweet_eval) dataset from Hugging Face Datasets.
 This dataset contains tweets labeled as **positive**, **neutral**, or **negative**, and includes many examples of sarcasm and irony, making it well-suited for training robust sentiment classifiers.
 
 - **Labels**:
@@ -59,7 +59,17 @@ A Gradio app is included for interactive testing. It allows users to:
 > `Label: POSITIVE`  
 > `Score: 0.9473`
 
+Train the model with:
+
+```bash
+python training.py
+ 
 Run it with:
 
 ```bash
 python gradio_app.py
+
+Evaluate on real-world data:
+
+```bash
+python evaluate.py
